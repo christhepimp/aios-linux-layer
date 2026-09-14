@@ -1,0 +1,39 @@
+# What the Aether supervisor may do without extra confirmation.
+# Expand slowly. Default-deny for destructive paths.
+
+read:
+  - /proc
+  - /sys
+  - /data/local/tmp
+  - /sdcard
+
+write:
+  - /data/local/tmp/aether
+  - /data/local/tmp/aether-audit.log
+
+exec_allow:
+  - uname
+  - id
+  - ps
+  - ls
+  - cat
+  - df
+  - mount
+  - ip
+  - getprop
+
+exec_deny:
+  - rm
+  - mkfs
+  - dd
+  - reboot
+  - fastboot
+  - chmod
+  - chown
+
+require_confirm:
+  - mount
+  - umount
+  - setprop
+  - pm
+  - am
