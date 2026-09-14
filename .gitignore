@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.venv/
+aether-audit.log
+.DS_Store
